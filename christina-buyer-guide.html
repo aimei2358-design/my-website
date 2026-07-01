@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buyer Guide - Christina Perng Real Estate</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Lato', sans-serif; color: #333; background: #fff; font-size: 15px; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+
+/* TOP BAR */
+.top-bar {
+  background: #2c2c2c; color: #bbb; font-size: 12px;
+  letter-spacing: 0.06em; padding: 7px 48px;
+  display: flex; justify-content: flex-end; gap: 28px;
+}
+.top-bar a { color: #bbb; transition: color 0.2s; }
+.top-bar a:hover { color: #fff; }
+
+/* HEADER */
+header {
+  background: #fff; border-bottom: 1px solid #e5e0d8;
+  padding: 0 48px; display: flex; align-items: center;
+  justify-content: space-between; height: 80px;
+  position: sticky; top: 0; z-index: 100;
+}
+.logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #2c2c2c; letter-spacing: 0.02em; line-height: 1.2; }
+.logo span { display: block; font-size: 11px; font-family: 'Lato', sans-serif; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: #8b7355; margin-top: 2px; }
+nav { display: flex; }
+nav a { display: block; padding: 0 14px; height: 80px; line-height: 80px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #555; border-bottom: 3px solid transparent; transition: color 0.2s, border-color 0.2s; }
+nav a:hover, nav a.active { color: #8b7355; border-bottom-color: #8b7355; }
+
+/* HERO BREADCRUMB */
+.page-hero { background: #f7f4ef; border-bottom: 1px solid #e5e0d8; padding: 40px 48px; }
+.breadcrumb { font-size: 12px; color: #999; letter-spacing: 0.05em; margin-bottom: 12px; }
+.breadcrumb a { color: #8b7355; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { margin: 0 7px; }
+.page-hero h1 { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 400; color: #2c2c2c; }
+
+/* MAIN GRID */
+.container { max-width: 1100px; margin: 0 auto; padding: 56px 48px; display: grid; grid-template-columns: 220px 1fr; gap: 64px; align-items: start; }
+
+/* SIDEBAR */
+.sidebar { border-top: 3px solid #8b7355; padding-top: 18px; }
+.sidebar a { display: block; padding: 11px 0 11px 0; font-size: 13px; color: #666; border-bottom: 1px solid #ede8e0; letter-spacing: 0.02em; transition: color 0.2s, padding-left 0.2s; }
+.sidebar a:hover { color: #8b7355; padding-left: 7px; }
+.sidebar a.active { color: #8b7355; font-weight: 700; padding-left: 7px; }
+
+/* CONTENT */
+.content img.hero-img { width: 100%; max-width: 500px; height: 290px; object-fit: cover; display: block; margin-bottom: 32px; }
+.content p { color: #666; font-size: 15px; line-height: 1.85; margin-bottom: 24px; }
+.content h3 { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 400; color: #2c2c2c; margin-bottom: 20px; }
+.content ul { list-style: none; margin-bottom: 40px; }
+.content ul li { padding: 11px 0 11px 26px; border-bottom: 1px solid #f0ebe3; color: #666; font-size: 15px; line-height: 1.65; position: relative; }
+.content ul li::before { content: ''; position: absolute; left: 0; top: 20px; width: 10px; height: 2px; background: #8b7355; }
+
+/* NAV BUTTONS */
+.nav-buttons { display: flex; gap: 12px; }
+.nav-btn { display: inline-block; padding: 11px 30px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid #8b7355; color: #8b7355; transition: background 0.2s, color 0.2s; cursor: pointer; }
+.nav-btn:hover { background: #8b7355; color: #fff; }
+
+/* FOOTER CTA */
+.footer-cta { background: #2c2c2c; color: #fff; padding: 64px 48px; }
+.footer-cta-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.footer-cta .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #c8b89a; margin-bottom: 12px; }
+.footer-cta h2 { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 400; color: #e8d9c4; margin-bottom: 18px; }
+.footer-cta p { color: #999; font-size: 14px; line-height: 1.85; }
+.contact-form { display: flex; flex-direction: column; gap: 12px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.contact-form input, .contact-form textarea { width: 100%; background: #3a3a3a; border: 1px solid #4a4a4a; color: #eee; padding: 11px 14px; font-family: 'Lato', sans-serif; font-size: 13px; outline: none; transition: border-color 0.2s; }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: #666; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: #8b7355; }
+.contact-form textarea { height: 96px; resize: none; }
+.contact-form button { align-self: flex-start; padding: 12px 32px; background: #8b7355; color: #fff; border: none; font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+.contact-form button:hover { background: #7a6347; }
+
+/* FOOTER */
+footer { background: #1a1a1a; color: #555; font-size: 12px; padding: 36px 48px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; color: #c8b89a; }
+.footer-logo span { display: block; font-family: 'Lato', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #555; margin-top: 3px; }
+.footer-divider { width: 36px; height: 1px; background: #8b7355; }
+.footer-info a { color: #666; }
+.footer-info a:hover { color: #c8b89a; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+.footer-links a { color: #555; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-links a:hover { color: #c8b89a; }
+.copyright { color: #444; font-size: 11px; }
+
+@media (max-width: 768px) {
+  header { padding: 0 20px; }
+  nav { display: none; }
+  .page-hero { padding: 28px 20px; }
+  .page-hero h1 { font-size: 28px; }
+  .container { grid-template-columns: 1fr; padding: 36px 20px; gap: 32px; }
+  .sidebar { display: none; }
+  .footer-cta { padding: 44px 20px; }
+  .footer-cta-inner { grid-template-columns: 1fr; gap: 36px; }
+  .form-row { grid-template-columns: 1fr; }
+  footer { padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="tel:+15551234567">+1 (555) 123-4567</a>
+  <a href="mailto:hello@christinaperng.com">hello@christinaperng.com</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    Christina Perng
+    <span>Real Estate</span>
+  </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Book Online</a>
+    <a href="#" class="active">Buyer / Seller Center</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="breadcrumb">
+    <a href="#">Home</a><span>»</span>
+    <a href="#">Buyers</a><span>»</span>
+    Choose a Real Estate Agent
+  </div>
+  <h1>Choose a Real Estate Agent</h1>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a href="#">Deciding to Buy</a>
+    <a href="#">Preparing to Buy</a>
+    <a href="#" class="active">Choose a Real Estate Agent</a>
+    <a href="#">Time to Go Shopping</a>
+    <a href="#">Escrow, Inspections &amp; Appraisals</a>
+    <a href="#">Moving In</a>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <img class="hero-img"
+      src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+      alt="Choose a Real Estate Agent">
+
+    <p>Buying a property requires making many important financial decisions, understanding complex issues, and completing a lot of paperwork. It helps to have an expert in your corner when undertaking such a large purchase. I can guide you through this process, and also provide you with access to property listings before they hit the general market.</p>
+
+    <h3>Factors to consider when choosing your real estate professional:</h3>
+
+    <ul>
+      <li>Look for a full-time agent — one who has experience completing transactions similar to yours.</li>
+      <li>Interview a few agents: Are they familiar with the area in which you are interested?</li>
+      <li>Ask how much time the agent will have for you, and if they are available at night and on weekends.</li>
+      <li>Ask about their credentials and education: A good agent will continually strive to improve and hold the highest designations in their respective fields of expertise.</li>
+      <li>Does the agent return your calls promptly? Time is money when attempting to buy a property.</li>
+      <li>Ask for a list of properties they have sold or a list of references.</li>
+      <li>Choose an agent who listens attentively to your needs and concerns, and with whom you feel comfortable.</li>
+    </ul>
+
+    <div class="nav-buttons">
+      <a href="#" class="nav-btn">← Prev</a>
+      <a href="#" class="nav-btn">Next →</a>
+    </div>
+  </main>
+
+</div>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta">
+  <div class="footer-cta-inner">
+    <div>
+      <div class="section-label">06 · Get</div>
+      <h2>In Touch</h2>
+      <p>In the market to buy or sell? Contact me for a high-level consultation and to take the next step toward owning your dream home. If you're considering selling, ask me for a complimentary, no-obligation market analysis of your home's value, and let's make a plan to achieve your real estate goals.</p>
+    </div>
+    <form class="contact-form" onsubmit="return false;">
+      <div class="form-row">
+        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+      </div>
+      <input type="tel" placeholder="Phone">
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      Christina Perng
+      <span>Real Estate · Compass Menlo Park</span>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-info">
+      <a href="tel:+15551234567">+1 (555) 123-4567</a> &nbsp;·&nbsp;
+      <a href="mailto:hello@christinaperng.com">hello@christinaperng.com</a> &nbsp;·&nbsp;
+      Palo Alto, CA
+    </div>
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#">Book Online</a>
+      <a href="#">Buyer / Seller Center</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="copyright">Copyright © 2026 Christina Perng Real Estate. All Rights Reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
