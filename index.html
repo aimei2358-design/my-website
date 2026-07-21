@@ -12,69 +12,41 @@ a { color: inherit; text-decoration: none; }
 
 /* TOP BAR */
 .top-bar {
-  background: #2c2c2c;
-  color: #bbb;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  padding: 7px 48px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 28px;
+  background: #2c2c2c; color: #bbb; font-size: 12px;
+  letter-spacing: 0.06em; padding: 7px 48px;
+  display: flex; justify-content: flex-end; gap: 28px;
 }
 .top-bar a { color: #bbb; transition: color 0.2s; }
 .top-bar a:hover { color: #fff; }
 
 /* HEADER */
 header {
-  background: #fff;
-  border-bottom: 1px solid #e5e0d8;
-  padding: 0 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  background: #fff; border-bottom: 1px solid #e5e0d8;
+  padding: 0 48px; display: flex; align-items: center;
+  justify-content: space-between; height: 80px;
+  position: sticky; top: 0; z-index: 100;
 }
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  font-weight: 600;
-  color: #2c2c2c;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-}
+.logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #2c2c2c; letter-spacing: 0.02em; line-height: 1.2; }
 .logo span { display: block; font-size: 11px; font-family: 'Lato', sans-serif; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: #8b7355; margin-top: 2px; }
 nav { display: flex; }
-nav a {
-  display: block;
-  padding: 0 14px;
-  height: 80px;
-  line-height: 80px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #555;
-  border-bottom: 3px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
-}
+nav a { display: block; padding: 0 14px; height: 80px; line-height: 80px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #555; border-bottom: 3px solid transparent; transition: color 0.2s, border-color 0.2s; }
 nav a:hover { color: #8b7355; border-bottom-color: #8b7355; }
 
-/* HERO SLIDESHOW */
+/* HERO - PARALLAX */
 .hero {
   position: relative;
   height: 580px;
   overflow: hidden;
   background: #1a1a1a;
 }
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+.hero-bg {
+  position: absolute;
+  inset: -80px 0;
+  background-image: url('9N6A5946 (1).jpg');
+  background-size: cover;
+  background-position: center top;
   opacity: 0.72;
+  will-change: transform;
 }
 .hero-overlay {
   position: absolute;
@@ -89,207 +61,67 @@ nav a:hover { color: #8b7355; border-bottom-color: #8b7355; }
 }
 .hero-overlay h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 52px;
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: 0.01em;
-  margin-bottom: 20px;
+  font-size: 52px; font-weight: 400; line-height: 1.15;
+  letter-spacing: 0.01em; margin-bottom: 20px;
   text-shadow: 0 2px 16px rgba(0,0,0,0.4);
 }
-.hero-overlay p {
-  font-size: 13px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #e8d9c4;
-  margin-bottom: 32px;
-}
-.hero-btn {
-  display: inline-block;
-  padding: 13px 36px;
-  border: 1px solid #fff;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  transition: background 0.25s, color 0.25s;
-}
+.hero-overlay p { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #e8d9c4; margin-bottom: 32px; }
+.hero-btn { display: inline-block; padding: 13px 36px; border: 1px solid #fff; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; transition: background 0.25s, color 0.25s; }
 .hero-btn:hover { background: #fff; color: #2c2c2c; }
-.hero-socials {
-  position: absolute;
-  bottom: 28px;
-  left: 48px;
-  display: flex;
-  gap: 16px;
-}
-.hero-socials a {
-  color: rgba(255,255,255,0.7);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
+.hero-socials { position: absolute; bottom: 28px; left: 48px; display: flex; gap: 16px; }
+.hero-socials a { color: rgba(255,255,255,0.7); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
 .hero-socials a:hover { color: #fff; }
 
-/* SECTION SHARED */
+/* SECTIONS */
 section { padding: 72px 48px; }
-.section-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #8b7355;
-  margin-bottom: 10px;
-}
-.section-num {
-  display: inline-block;
-  margin-right: 8px;
-  color: #ccc;
-}
+.section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #8b7355; margin-bottom: 10px; }
+.section-num { display: inline-block; margin-right: 8px; color: #ccc; }
 
-/* ABOUT SECTION */
-.about-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 72px;
-  align-items: center;
-}
-.about-text h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 38px;
-  font-weight: 400;
-  color: #2c2c2c;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-.about-text p {
-  color: #666;
-  margin-bottom: 16px;
-  font-size: 15px;
-  line-height: 1.85;
-}
-.about-btns { display: flex; gap: 14px; margin-top: 28px; }
-.btn-outline {
-  display: inline-block;
-  padding: 11px 28px;
-  border: 1px solid #8b7355;
-  color: #8b7355;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transition: background 0.2s, color 0.2s;
-}
+/* ABOUT */
+.about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start; }
+.about-text h2 { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 400; color: #2c2c2c; line-height: 1.2; margin-bottom: 20px; }
+.bio-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 8px; }
+.bio-cols .col-zh { border-left: 1px solid #e5e0d8; padding-left: 28px; }
+.bio-cols p { color: #666; font-size: 14px; line-height: 1.85; margin-bottom: 14px; }
+.service-tag { font-size: 12px; color: #8b7355; font-weight: 700; margin-top: 4px; }
+.about-btns { display: flex; gap: 14px; margin-top: 24px; }
+.btn-outline { display: inline-block; padding: 11px 28px; border: 1px solid #8b7355; color: #8b7355; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: background 0.2s, color 0.2s; }
 .btn-outline:hover { background: #8b7355; color: #fff; }
 .about-photo-wrap { position: relative; }
-.about-photo-wrap img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-}
-.about-photo-badge {
-  position: absolute;
-  bottom: -20px;
-  left: -20px;
-  background: #8b7355;
-  color: #fff;
-  padding: 20px 24px;
-  font-family: 'Playfair Display', serif;
-  font-size: 13px;
-  line-height: 1.5;
-}
+.about-photo-wrap img { width: 100%; height: 520px; object-fit: cover; object-position: top; display: block; }
+.about-photo-badge { position: absolute; bottom: -20px; left: -20px; background: #8b7355; color: #fff; padding: 20px 24px; font-family: 'Playfair Display', serif; font-size: 13px; line-height: 1.5; }
 .about-photo-badge strong { display: block; font-size: 28px; font-weight: 600; }
 
 /* STATS */
 .stats { background: #f7f4ef; }
-.stats-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.stats-inner h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  color: #2c2c2c;
-  font-weight: 400;
-  margin-bottom: 48px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  background: #e5e0d8;
-}
-.stat-box {
-  background: #fff;
-  padding: 40px 28px;
-  text-align: center;
-}
-.stat-box .num {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  font-weight: 600;
-  color: #8b7355;
-  line-height: 1;
-  margin-bottom: 14px;
-}
+.stats-inner { max-width: 1100px; margin: 0 auto; }
+.stats-inner h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: #2c2c2c; font-weight: 400; margin-bottom: 48px; text-align: center; letter-spacing: 0.05em; text-transform: uppercase; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: #e5e0d8; }
+.stat-box { background: #fff; padding: 40px 28px; text-align: center; }
+.stat-box .num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 600; color: #8b7355; line-height: 1; margin-bottom: 14px; }
 .stat-box p { font-size: 13px; color: #888; line-height: 1.6; }
 
 /* PHOTOS STRIP */
-.photos-strip {
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: 380px;
-}
-.photos-strip img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-  transition: opacity 0.3s;
-}
+.photos-strip { padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); height: 380px; }
+.photos-strip img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: opacity 0.3s; }
 .photos-strip img:hover { opacity: 0.88; }
 
 /* TESTIMONIALS */
-.testimonials { background: #2c2c2c; color: #fff; }
+.testimonials { background: #f7f4ef; }
 .testimonials-inner { max-width: 1100px; margin: 0 auto; }
-.testimonials-inner .section-label { color: #c8b89a; }
-.testimonials-inner h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #e8d9c4;
-  margin-bottom: 48px;
-}
-.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.testimonial-card {
-  border-top: 2px solid #8b7355;
-  padding-top: 24px;
-}
-.testimonial-card p { color: #aaa; font-size: 14px; line-height: 1.8; margin-bottom: 20px; font-style: italic; }
-.testimonial-card .author { color: #c8b89a; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.testimonials-inner .section-label { color: #8b7355; }
+.testimonials-inner h2 { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; color: #2c2c2c; margin-bottom: 48px; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.testimonial-card { background: #fff; border-top: 3px solid #8b7355; padding: 28px; }
+.testimonial-card .stars { color: #8b7355; font-size: 14px; margin-bottom: 12px; }
+.testimonial-card p { color: #555; font-size: 14px; line-height: 1.8; margin-bottom: 20px; font-style: italic; }
+.testimonial-card .author { color: #2c2c2c; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .view-all { display: inline-block; margin-top: 40px; padding: 11px 28px; border: 1px solid #8b7355; color: #8b7355; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: background 0.2s, color 0.2s; }
 .view-all:hover { background: #8b7355; color: #fff; }
 
 /* LISTINGS */
 .listings-inner { max-width: 1100px; margin: 0 auto; }
-.listings-inner h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  font-weight: 400;
-  color: #2c2c2c;
-  margin-bottom: 8px;
-}
+.listings-inner h2 { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 400; color: #2c2c2c; margin-bottom: 8px; }
 .listings-inner .sub { color: #999; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 40px; }
 .listings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .listing-card img { width: 100%; height: 220px; object-fit: cover; display: block; margin-bottom: 16px; }
@@ -299,77 +131,27 @@ section { padding: 72px 48px; }
 
 /* CONTACT */
 .contact { background: #2c2c2c; color: #fff; }
-.contact-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: start;
-}
+.contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
 .contact-left .section-label { color: #c8b89a; }
-.contact-left h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  font-weight: 400;
-  color: #e8d9c4;
-  margin-bottom: 20px;
-  line-height: 1.25;
-}
+.contact-left h2 { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 400; color: #e8d9c4; margin-bottom: 20px; line-height: 1.25; }
 .contact-left p { color: #999; font-size: 14px; line-height: 1.85; margin-bottom: 28px; }
 .contact-detail { margin-bottom: 12px; }
 .contact-detail span { display: block; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8b7355; margin-bottom: 3px; }
 .contact-detail a { color: #ccc; font-size: 14px; }
 .contact-form { display: flex; flex-direction: column; gap: 12px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.contact-form input, .contact-form textarea {
-  width: 100%;
-  background: #3a3a3a;
-  border: 1px solid #4a4a4a;
-  color: #eee;
-  padding: 11px 14px;
-  font-family: 'Lato', sans-serif;
-  font-size: 13px;
-  outline: none;
-  transition: border-color 0.2s;
-}
+.contact-form input, .contact-form textarea { width: 100%; background: #3a3a3a; border: 1px solid #4a4a4a; color: #eee; padding: 11px 14px; font-family: 'Lato', sans-serif; font-size: 13px; outline: none; transition: border-color 0.2s; }
 .contact-form input::placeholder, .contact-form textarea::placeholder { color: #666; }
 .contact-form input:focus, .contact-form textarea:focus { border-color: #8b7355; }
 .contact-form textarea { height: 100px; resize: none; }
-.contact-form button {
-  align-self: flex-start;
-  padding: 12px 32px;
-  background: #8b7355;
-  color: #fff;
-  border: none;
-  font-family: 'Lato', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.2s;
-}
+.contact-form button { align-self: flex-start; padding: 12px 32px; background: #8b7355; color: #fff; border: none; font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
 .contact-form button:hover { background: #7a6347; }
 
 /* FOOTER */
-footer {
-  background: #1a1a1a;
-  color: #555;
-  font-size: 12px;
-  padding: 36px 48px;
-}
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  text-align: center;
-}
+footer { background: #1a1a1a; color: #555; font-size: 12px; padding: 36px 48px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
 .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; color: #c8b89a; }
-.footer-logo span { display: block; font-family: 'Lato', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #666; margin-top: 3px; }
+.footer-logo span { display: block; font-family: 'Lato', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #555; margin-top: 3px; }
 .footer-divider { width: 36px; height: 1px; background: #8b7355; }
 .footer-info a { color: #666; }
 .footer-info a:hover { color: #c8b89a; }
@@ -379,11 +161,12 @@ footer {
 .copyright { color: #444; font-size: 11px; }
 
 @media (max-width: 768px) {
-  header { padding: 0 20px; }
-  nav { display: none; }
+  header { padding: 0 20px; } nav { display: none; }
   .hero-overlay h1 { font-size: 32px; }
   section { padding: 48px 20px; }
   .about-inner { grid-template-columns: 1fr; }
+  .bio-cols { grid-template-columns: 1fr; }
+  .bio-cols .col-zh { border-left: none; padding-left: 0; border-top: 1px solid #e5e0d8; padding-top: 20px; }
   .about-photo-wrap img { height: 360px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .photos-strip { grid-template-columns: 1fr; height: auto; }
@@ -397,18 +180,13 @@ footer {
 </head>
 <body>
 
-<!-- TOP BAR -->
 <div class="top-bar">
-  <a href="tel:+15551234567">+1 (555) 123-4567</a>
-  <a href="mailto:hello@christinaperng.com">hello@christinaperng.com</a>
+  <a href="tel:+14086677757">408-667-7757</a>
+  <a href="mailto:christina.perng@compass.com">christina.perng@compass.com</a>
 </div>
 
-<!-- HEADER -->
 <header>
-  <div class="logo">
-    Christina Perng
-    <span>Real Estate</span>
-  </div>
+  <div class="logo">Christina Perng<span>Real Estate · DRE# 01794803</span></div>
   <nav>
     <a href="#">Home</a>
     <a href="#">Buyer / Seller Center</a>
@@ -417,18 +195,19 @@ footer {
   </nav>
 </header>
 
-<!-- HERO -->
+<!-- HERO with parallax -->
 <div class="hero">
-  <img class="hero-img" src="9N6A5946 (1).jpg" alt="Luxury home">
+  <div class="hero-bg" id="heroBg"></div>
   <div class="hero-overlay">
     <p>Palo Alto · Menlo Park · Bay Area</p>
     <h1>Professionalism Guided<br>by Patience</h1>
-    <a href="#" class="hero-btn">Schedule a Consultation</a>
+    <a href="mailto:christina.perng@compass.com" class="hero-btn">Schedule a Consultation</a>
   </div>
   <div class="hero-socials">
-    <a href="#">Facebook</a>
-    <a href="#">LinkedIn</a>
-    <a href="#">Zillow</a>
+    <a href="https://www.facebook.com/profile.php?id=61557950459222" target="_blank">Facebook</a>
+    <a href="https://www.linkedin.com/in/christina-perng-a4b909aa/" target="_blank">LinkedIn</a>
+    <a href="https://www.instagram.com/christinaperng/" target="_blank">Instagram</a>
+    <a href="https://www.zillow.com/profile/Christina%20Perng#reviews" target="_blank">Zillow</a>
   </div>
 </div>
 
@@ -438,32 +217,30 @@ footer {
     <div class="about-text">
       <div class="section-label"><span class="section-num">01</span>About</div>
       <h2>Christina Perng</h2>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:8px;">
-        <div>
-          <p>I am a real estate agent at Compass Menlo Park. Having lived in the Bay Area for 23 years and currently residing in Palo Alto, I have personally experienced every change this land has seen—from the rise of the housing market to the growth of communities. This deep familiarity with the area allows me to help clients better assess a neighborhood, a street, or even a single home, to determine if it's truly the right fit for their life.</p>
-          <p>Over 15 years, I have specialized in residential real estate services across Palo Alto, Menlo Park, and cities throughout the Bay Area, having assisted over 200 families in completing home purchases, sales, or investment transactions. My clients range from first-time buyers of young families, to move-up buyers, to investors seeking opportunities—I approach every one of them with the same care and expertise, accompanying them every step of the way in every important decision.</p>
-          <p>In addition to real estate, I also have a background in Staging design. This allows me to provide effective placement advice when helping clients sell their homes, giving buyers a fresh perspective and helping properties stand out in the market.</p>
-          <p>Buying, selling, investing in real estate—every transaction represents an important decision for a family. I hope to be a trusted partner for you on this journey.</p>
-          <p style="font-size:13px; color:#8b7355; font-weight:700;">Service Areas: Palo Alto · Menlo Park · Bay Area &nbsp;|&nbsp; Languages: Chinese · English</p>
+      <div class="bio-cols">
+        <div class="col-en">
+          <p>I am a real estate agent at Compass Menlo Park. Having lived in the Bay Area for 23 years and currently residing in Palo Alto, I have personally experienced every change this land has seen—from the rise of the housing market to the growth of communities. This familiarity allows me to help clients better assess a neighborhood, a street, or even a single home.</p>
+          <p>Over 15 years, I have specialized in residential real estate across Palo Alto, Menlo Park, and cities throughout the Bay Area, having assisted over 200 families in completing home purchases, sales, or investment transactions. I approach every client with the same care and expertise, accompanying them every step of the way.</p>
+          <p>In addition to real estate, I also have a background in Staging design, allowing me to provide effective advice when helping clients sell their homes and stand out in the market.</p>
+          <p>Buying, selling, investing—every transaction represents an important decision for a family. I hope to be a trusted partner for you on this journey.</p>
+          <p class="service-tag">Service Areas: Palo Alto · Menlo Park · Bay Area &nbsp;|&nbsp; Languages: Chinese · English</p>
         </div>
-        <div style="border-left:1px solid #e5e0d8; padding-left:32px;">
+        <div class="col-zh">
           <p>我是 Christina Perng，Compass Menlo Park 的房地產經紀人。我在灣區生活了23年，目前定居 Palo Alto，這片土地的每一次變化——從房市的起伏到社區的成長——我都親身經歷過。這份在地的熟悉感，讓我能更準確地幫助客戶判斷一個社區、一條街、甚至一棟房子，是否真正適合他們的生活。</p>
-          <p>15年來，我專注於 Palo Alto、Menlo Park 以及灣區其他城市的房地產服務，至今已協助超過200個家庭完成買房、賣房或投資置產。我的客戶來自多元背景，從第一次購屋的年輕家庭、需要換屋的二次購屋族，到尋找投資機會的客戶，我都用同樣的細心與專業，陪伴他們走過每一個重要的決定。</p>
+          <p>15年來，我專注於 Palo Alto、Menlo Park 以及灣區其他城市的房地產服務，至今已協助超過200個家庭完成買房、賣房或投資置產。我的客戶來自多元背景，我都用同樣的細心與專業，陪伴他們走過每一個重要的決定。</p>
           <p>除了房地產專業，我也擁有 Staging 設計背景。這讓我在協助客戶賣房時，能從買家的視角出發，給出實際且有效的佈置建議，幫助房屋在市場上脫穎而出。</p>
           <p>買房、賣房、投資置產——每一筆交易背後，都是一個家庭的重要決定。我希望成為您在這條路上，值得信任的夥伴。</p>
-          <p style="font-size:13px; color:#8b7355; font-weight:700;">服務區域： Palo Alto、Menlo Park 及灣區各城市 &nbsp;|&nbsp; 服務語言： 中文、英文</p>
+          <p class="service-tag">服務區域： Palo Alto、Menlo Park 及灣區各城市 &nbsp;|&nbsp; 服務語言： 中文、英文</p>
         </div>
       </div>
       <div class="about-btns">
-        <a href="#" class="btn-outline">Learn More</a>
-        <a href="#" class="btn-outline">Book a View</a>
+        <a href="mailto:christina.perng@compass.com" class="btn-outline">Get in Touch</a>
+        <a href="https://www.yelp.com/biz/christina-perng-compass-realty-menlo-park" target="_blank" class="btn-outline">Read Reviews</a>
       </div>
     </div>
     <div class="about-photo-wrap">
       <img src="9N6A6169 (1).jpg" alt="Christina Perng">
-      <div class="about-photo-badge">
-        <strong>23</strong>Years in the Bay Area
-      </div>
+      <div class="about-photo-badge"><strong>200+</strong>Families Helped</div>
     </div>
   </div>
 </section>
@@ -474,22 +251,10 @@ footer {
     <div class="section-label" style="text-align:center;margin-bottom:6px;"><span class="section-num">02</span>Why Work With Me</div>
     <h2>Proven Performance</h2>
     <div class="stats-grid">
-      <div class="stat-box">
-        <div class="num">200+</div>
-        <p>Families assisted with purchases, sales, or investment transactions</p>
-      </div>
-      <div class="stat-box">
-        <div class="num">23</div>
-        <p>Years living and working in the Bay Area — Palo Alto resident</p>
-      </div>
-      <div class="stat-box">
-        <div class="num">15+</div>
-        <p>Years specializing in Palo Alto, Menlo Park &amp; Bay Area real estate</p>
-      </div>
-      <div class="stat-box">
-        <div class="num">2</div>
-        <p>Languages served — Chinese &amp; English — for the broader Bay Area community</p>
-      </div>
+      <div class="stat-box"><div class="num">200+</div><p>Families assisted with purchases, sales, or investments</p></div>
+      <div class="stat-box"><div class="num">15+</div><p>Years specializing in Palo Alto, Menlo Park & Bay Area</p></div>
+      <div class="stat-box"><div class="num">$3B+</div><p>Total closed sales volume across Silicon Valley</p></div>
+      <div class="stat-box"><div class="num">2</div><p>Languages served — Chinese & English — for the Bay Area community</p></div>
     </div>
   </div>
 </section>
@@ -508,19 +273,37 @@ footer {
     <h2>Testimonials</h2>
     <div class="testimonials-grid">
       <div class="testimonial-card">
-        <p>"Christina's deep knowledge of Palo Alto made all the difference. She guided us through a competitive market with patience and professionalism, and we found our dream home within our budget. We couldn't have done it without her."</p>
-        <div class="author">— Sarah &amp; Michael T.</div>
+        <div class="stars">★★★★★</div>
+        <p>"Professional, Kindhearted and Highly Recommend. Christina considered all of the details and explained to us patiently. She made professional Comparative Market Analysis and pros and cons analysis. After close she gave us a lot of good recommendations — we saved a lot of money thanks to Christina."</p>
+        <div class="author">— Wenping L.</div>
       </div>
       <div class="testimonial-card">
-        <p>"As first-time buyers, we were nervous about the process. Christina walked us through every step in both English and Chinese, making sure we fully understood each decision. Her staging advice also helped us sell our condo quickly and above asking."</p>
-        <div class="author">— Wei L.</div>
+        <div class="stars">★★★★★</div>
+        <p>"This is our first experience buying a house in America. Christina did a great job on preparation and info collection. When we were going to make the final decision, she made a very good pricing strategy for us — we reached the contract at our lowest target. Choose a good agent can save your money; choose an honest agent can help you make the best decision."</p>
+        <div class="author">— Peter Z.</div>
       </div>
       <div class="testimonial-card">
-        <p>"Christina is the rare agent who truly listens. She never rushed us, always responded quickly, and her knowledge of Menlo Park neighborhoods is unmatched. She helped our family find not just a house, but a real home."</p>
-        <div class="author">— Jennifer K.</div>
+        <div class="stars">★★★★★</div>
+        <p>"Thanks to Christina, we were able to purchase our first home in a competitive market with 40 competing offers. Without Christina's advice, experience, and ability to deal with the seller's agent, we wouldn't have had a chance. Throughout the whole process, Christina treated us like friends. She never pressured us or tried to upsell us."</p>
+        <div class="author">— Bruno W.</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"We can't say this is the smoothest home purchase due to many uncontrollable factors, but we are grateful to have Christina there every step of the way. Her honesty and frankness are what we appreciate the most. We feel we can trust her fully and not worry about any hidden agenda."</p>
+        <div class="author">— Joanne L.</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"We're so lucky to meet Christina for our 1st investment property. Most agents tend to up-sell to get more commission; however, Christina analyzes your economic status and lifestyle and guides you to what is better for your future. She treats us like family members. I cannot say thank you enough for all her 5-star service."</p>
+        <div class="author">— Alyssa C.</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Christine is exceptional among many realtors I have met and worked with over 30–40 years. She puts her client first, looks out for important terms and clauses, and is honest with integrity. After the contract is signed, she provides plans and actions to help clients close timely. I will definitely recommend her anytime!"</p>
+        <div class="author">— I L.</div>
       </div>
     </div>
-    <a href="#" class="view-all">View All Testimonials</a>
+    <a href="https://www.yelp.com/biz/christina-perng-compass-realty-menlo-park" target="_blank" class="view-all">View All Reviews on Yelp</a>
   </div>
 </section>
 
@@ -529,32 +312,26 @@ footer {
   <div class="listings-inner">
     <div class="section-label"><span class="section-num">04</span>Premier Listings</div>
     <h2>Portfolio</h2>
-    <p class="sub">Explore More</p>
+    <p class="sub">Recent Transactions</p>
     <div class="listings-grid">
-      <div class="listing-card">
-        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="Client Testimonials">
-        <div>
-          <span class="listing-num">01</span>
-          <h3>Client Testimonials</h3>
-        </div>
-        <p>Experience the satisfaction of our clients through their testimonials. These images capture the joy and contentment of our clients as they find their dream homes.</p>
-      </div>
-      <div class="listing-card">
-        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80" alt="Property Staging">
-        <div>
-          <span class="listing-num">02</span>
-          <h3>Property Staging</h3>
-        </div>
-        <p>Discover the art of property staging with beautifully designed spaces. Each image showcases the meticulous attention to detail in creating an inviting environment.</p>
-      </div>
-      <div class="listing-card">
-        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Luxury Homes">
-        <div>
-          <span class="listing-num">03</span>
-          <h3>Luxury Homes</h3>
-        </div>
-        <p>A collection of luxurious properties with stunning architecture and elegant interiors. Explore these exquisite homes that redefine luxury living in the Bay Area.</p>
-      </div>
+      <a href="https://www.compass.com/homedetails/10334-S-Tantau-Ave-Cupertino-CA-95014/2053806190920045289_lid/" target="_blank" class="listing-card" style="display:block;color:inherit;text-decoration:none;">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Cupertino">
+        <div><span class="listing-num">$5,500,000</span><h3>Cupertino, CA</h3></div>
+        <p>10334 South Tantau Avenue — 5 bed · 5 bath · 3,727 sqft</p>
+        <p style="font-size:12px;color:#8b7355;margin-top:8px;font-weight:700;">View on Compass →</p>
+      </a>
+      <a href="https://www.compass.com/homedetails/19848-Kane-Ct-Saratoga-CA-95070/1675424839098775569_lid/" target="_blank" class="listing-card" style="display:block;color:inherit;text-decoration:none;">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="Saratoga">
+        <div><span class="listing-num">$4,601,000</span><h3>Saratoga, CA</h3></div>
+        <p>19848 Kane Court — 6 bed · 4 bath · 2,860 sqft</p>
+        <p style="font-size:12px;color:#8b7355;margin-top:8px;font-weight:700;">View on Compass →</p>
+      </a>
+      <a href="https://www.compass.com/homedetails/774-Mayview-Ave-Palo-Alto-CA-94303/1484455256352798401_lid/" target="_blank" class="listing-card" style="display:block;color:inherit;text-decoration:none;">
+        <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=600&q=80" alt="Palo Alto">
+        <div><span class="listing-num">$4,000,000</span><h3>Palo Alto, CA</h3></div>
+        <p>774 Mayview Avenue — 4 bed · 4 bath · 2,509 sqft</p>
+        <p style="font-size:12px;color:#8b7355;margin-top:8px;font-weight:700;">View on Compass →</p>
+      </a>
     </div>
   </div>
 </section>
@@ -566,18 +343,10 @@ footer {
       <div class="section-label"><span class="section-num">05</span>Get</div>
       <h2>Let's Start Your Journey</h2>
       <p>In the market to buy or sell? Contact me for a high-level consultation and to take the next step toward owning your dream home. If you're considering selling, ask me for a complimentary, no-obligation market analysis of your home's value.</p>
-      <div class="contact-detail">
-        <span>Phone</span>
-        <a href="tel:+15551234567">+1 (555) 123-4567</a>
-      </div>
-      <div class="contact-detail">
-        <span>Email</span>
-        <a href="mailto:hello@christinaperng.com">hello@christinaperng.com</a>
-      </div>
-      <div class="contact-detail">
-        <span>Location</span>
-        <a href="#">Palo Alto · Menlo Park · Bay Area</a>
-      </div>
+      <div class="contact-detail"><span>Phone</span><a href="tel:+14086677757">408-667-7757</a></div>
+      <div class="contact-detail"><span>Email</span><a href="mailto:christina.perng@compass.com">christina.perng@compass.com</a></div>
+      <div class="contact-detail"><span>DRE License</span><a>#01794803</a></div>
+      <div class="contact-detail"><span>Location</span><a>Palo Alto · Menlo Park · Bay Area</a></div>
     </div>
     <form class="contact-form" onsubmit="return false;">
       <div class="form-row">
@@ -595,19 +364,15 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">
-      Christina Perng
-      <span>Real Estate · Compass Menlo Park</span>
-    </div>
+    <div class="footer-logo">Christina Perng<span>Real Estate · Compass Menlo Park · DRE# 01794803</span></div>
     <div class="footer-divider"></div>
     <div class="footer-info">
-      <a href="tel:+15551234567">+1 (555) 123-4567</a> &nbsp;·&nbsp;
-      <a href="mailto:hello@christinaperng.com">hello@christinaperng.com</a> &nbsp;·&nbsp;
+      <a href="tel:+14086677757">408-667-7757</a> &nbsp;·&nbsp;
+      <a href="mailto:christina.perng@compass.com">christina.perng@compass.com</a> &nbsp;·&nbsp;
       Palo Alto, CA
     </div>
     <div class="footer-links">
       <a href="#">Home</a>
-      <a href="#">Book Online</a>
       <a href="#">Buyer / Seller Center</a>
       <a href="#">Portfolio</a>
       <a href="#">Contact</a>
@@ -615,6 +380,15 @@ footer {
     <div class="copyright">Copyright © 2026 Christina Perng Real Estate. All Rights Reserved.</div>
   </div>
 </footer>
+
+<script>
+  // Parallax effect on hero
+  const heroBg = document.getElementById('heroBg');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    heroBg.style.transform = 'translateY(' + scrolled * 0.4 + 'px)';
+  });
+</script>
 
 </body>
 </html>
