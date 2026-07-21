@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media - Christina Perng Real Estate</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Lato',sans-serif;color:#333;background:#fff;font-size:15px;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.top-bar{background:#2c2c2c;color:#bbb;font-size:12px;letter-spacing:.06em;padding:7px 48px;display:flex;justify-content:flex-end;gap:28px}
+.top-bar a{color:#bbb;transition:color .2s}.top-bar a:hover{color:#fff}
+header{background:#fff;border-bottom:1px solid #e5e0d8;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:80px;position:sticky;top:0;z-index:100}
+.logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:600;color:#2c2c2c;letter-spacing:.02em;line-height:1.2}
+.logo span{display:block;font-size:11px;font-family:'Lato',sans-serif;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:#8b7355;margin-top:2px}
+nav{display:flex}
+nav a{display:block;padding:0 12px;height:80px;line-height:80px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#555;border-bottom:3px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover,nav a.active{color:#8b7355;border-bottom-color:#8b7355}
+
+.page-hero{background:#2c2c2c;padding:64px 48px;text-align:center}
+.page-hero .label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8b7355;margin-bottom:16px}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:44px;font-weight:400;color:#e8d9c4;margin-bottom:16px}
+.page-hero p{color:#999;font-size:15px;max-width:580px;margin:0 auto;line-height:1.8}
+
+/* FOLLOW STRIP */
+.follow-strip{background:#f7f4ef;border-bottom:1px solid #e5e0d8;padding:28px 48px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+.follow-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;border:1px solid #e5e0d8;background:#fff;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#555;transition:all .2s}
+.follow-btn:hover{border-color:#8b7355;color:#8b7355}
+.follow-btn .icon{font-size:18px}
+
+/* SECTION HEADERS */
+.section-wrap{max-width:1100px;margin:0 auto;padding:64px 48px}
+.section-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8b7355;margin-bottom:10px}
+.section-label .num{color:#ccc;margin-right:8px}
+h2.section-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:400;color:#2c2c2c;margin-bottom:8px}
+.section-sub{color:#999;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:40px}
+
+/* YOUTUBE EMBED */
+.youtube-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:1px solid #e5e0d8;margin-bottom:16px}
+.youtube-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+.video-caption{font-size:14px;color:#888;line-height:1.7;margin-bottom:48px}
+.video-caption strong{color:#2c2c2c}
+
+/* REELS GRID */
+.reels-intro{color:#666;font-size:15px;line-height:1.8;margin-bottom:36px;max-width:700px}
+.reels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:16px}
+.reel-card{position:relative;overflow:hidden;border:1px solid #e5e0d8;display:block;transition:border-color .2s,box-shadow .2s}
+.reel-card:hover{border-color:#8b7355;box-shadow:0 4px 16px rgba(139,115,85,.12)}
+.reel-img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
+.reel-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
+.reel-overlay .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:48px;height:48px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px}
+.reel-overlay p{color:#fff;font-size:13px;font-weight:700;line-height:1.4}
+.reel-overlay .tag{font-size:10px;color:#e8d9c4;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.view-more-btn{display:inline-block;margin-top:24px;padding:12px 32px;border:1px solid #8b7355;color:#8b7355;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;transition:background .2s,color .2s}
+.view-more-btn:hover{background:#8b7355;color:#fff}
+
+/* FACEBOOK SECTION */
+.fb-section{background:#f7f4ef;padding:64px 48px}
+.fb-inner{max-width:1100px;margin:0 auto}
+.fb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.fb-card{background:#fff;border:1px solid #e5e0d8;padding:24px;display:block;transition:border-color .2s}
+.fb-card:hover{border-color:#8b7355}
+.fb-card .fb-tag{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8b7355;margin-bottom:10px}
+.fb-card p{font-size:14px;color:#555;line-height:1.7;margin-bottom:14px}
+.fb-card .fb-link{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8b7355}
+
+/* SCREENSHOT GALLERY */
+.screenshot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:32px}
+.screenshot-grid img{width:100%;aspect-ratio:9/16;object-fit:cover;border:1px solid #e5e0d8;display:block}
+
+/* CTA */
+.cta-dark{background:#2c2c2c;padding:64px 48px;text-align:center}
+.cta-dark h2{font-family:'Playfair Display',serif;font-size:32px;font-weight:400;color:#e8d9c4;margin-bottom:16px}
+.cta-dark p{color:#999;font-size:15px;max-width:520px;margin:0 auto 32px}
+.cta-dark .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta-btn-light{display:inline-block;padding:13px 32px;border:1px solid #fff;color:#fff;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;transition:background .2s,color .2s}
+.cta-btn-light:hover{background:#fff;color:#2c2c2c}
+.cta-btn-gold{display:inline-block;padding:13px 32px;background:#8b7355;color:#fff;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;transition:background .2s}
+.cta-btn-gold:hover{background:#7a6347}
+
+footer{background:#1a1a1a;color:#555;font-size:12px;padding:36px 48px}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.footer-logo{font-family:'Playfair Display',serif;font-size:22px;color:#c8b89a}
+.footer-logo span{display:block;font-family:'Lato',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#555;margin-top:3px}
+.footer-divider{width:36px;height:1px;background:#8b7355}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.footer-links a{color:#555;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.footer-links a:hover{color:#c8b89a}
+.copyright{color:#444;font-size:11px}
+
+@media(max-width:768px){
+  header{padding:0 20px}nav{display:none}
+  .page-hero{padding:44px 20px}.page-hero h1{font-size:28px}
+  .follow-strip{padding:20px;gap:12px}
+  .section-wrap{padding:44px 20px}
+  .reels-grid{grid-template-columns:repeat(2,1fr)}
+  .fb-section{padding:44px 20px}
+  .fb-grid{grid-template-columns:1fr}
+  .screenshot-grid{grid-template-columns:repeat(2,1fr)}
+  .cta-dark{padding:44px 20px}
+  footer{padding:28px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="tel:+14086677757">408-667-7757</a>
+  <a href="mailto:christina.perng@compass.com">christina.perng@compass.com</a>
+</div>
+<header>
+  <div class="logo">Christina Perng<span>Real Estate · DRE# 01794803</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="christina-buyer-seller.html">Buyer / Seller</a>
+    <a href="christina-portfolio.html">Portfolio</a>
+    <a href="#" class="active">Social Media</a>
+    <a href="christina-contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="label">Follow Along</div>
+  <h1>Social Media</h1>
+  <p>Bay Area real estate tips, neighborhood guides, market updates, and behind-the-scenes — in English and Chinese. Follow me for weekly content!</p>
+</div>
+
+<!-- FOLLOW BUTTONS -->
+<div class="follow-strip">
+  <a href="https://www.instagram.com/christinaperng/" target="_blank" class="follow-btn"><span class="icon">📸</span> Follow on Instagram</a>
+  <a href="https://www.facebook.com/profile.php?id=61557950459222" target="_blank" class="follow-btn"><span class="icon">👥</span> Follow on Facebook</a>
+  <a href="https://www.youtube.com/watch?v=mjn5u2s0Hac" target="_blank" class="follow-btn"><span class="icon">▶️</span> Watch on YouTube</a>
+  <a href="https://www.linkedin.com/in/christina-perng-a4b909aa/" target="_blank" class="follow-btn"><span class="icon">💼</span> Connect on LinkedIn</a>
+</div>
+
+<!-- YOUTUBE INTERVIEW -->
+<div class="section-wrap">
+  <div class="section-label"><span class="num">01</span>Featured Interview</div>
+  <h2 class="section-title">Watch My Interview</h2>
+  <div class="section-sub">Expert insights on Bay Area real estate</div>
+
+  <div class="youtube-wrap">
+    <iframe src="https://www.youtube.com/embed/mjn5u2s0Hac" title="Christina Perng Interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <p class="video-caption"><strong>Christina Perng</strong> shares her expertise on navigating the Bay Area real estate market — from first-time buyers to competitive multi-offer situations. Serving Palo Alto, Menlo Park, and Silicon Valley for over 15 years.</p>
+
+  <!-- REELS -->
+  <div class="section-label" style="margin-top:16px"><span class="num">02</span>Instagram & Facebook Reels</div>
+  <h2 class="section-title">Latest Content</h2>
+  <div class="section-sub">Tips, tours & market insights 每週更新</div>
+
+  <p class="reels-intro">I post weekly reels on Instagram and Facebook covering Bay Area neighborhood guides, market trends, staging tips, and first-time buyer advice — all in English and Chinese. Click any reel to watch on Instagram.</p>
+
+  <!-- Screenshot-based reel cards using the uploaded image -->
+  <div class="reels-grid">
+    <a href="https://www.instagram.com/christinaperng/" target="_blank" class="reel-card">
+      <img class="reel-img" src="9N6A5969 (1).jpg" alt="Reel">
+      <div class="reel-overlay">
+        <div class="play">▶</div>
+        <div class="tag">Instagram Reel</div>
+        <p>Thinking About Buying in Palo Alto? Watch This First.</p>
+      </div>
+    </a>
+    <a href="https://www.instagram.com/christinaperng/" target="_blank" class="reel-card">
+      <img class="reel-img" src="9N6A6024 (1).jpg" alt="Reel">
+      <div class="reel-overlay">
+        <div class="play">▶</div>
+        <div class="tag">Instagram Reel</div>
+        <p>一扇玻璃窗改變了 South Palo Alto 的生活方式</p>
+      </div>
+    </a>
+    <a href="https://www.instagram.com/christinaperng/" target="_blank" class="reel-card">
+      <img class="reel-img" src="9N6A5921 (1).jpg" alt="Reel">
+      <div class="reel-overlay">
+        <div class="play">▶</div>
+        <div class="tag">Instagram Reel</div>
+        <p>Many people know Palo Alto for its exceptional schools</p>
+      </div>
+    </a>
+  </div>
+
+  <a href="https://www.instagram.com/christinaperng/" target="_blank" class="view-more-btn">View All Reels on Instagram →</a>
+</div>
+
+<!-- FACEBOOK POSTS -->
+<div class="fb-section">
+  <div class="fb-inner">
+    <div class="section-label"><span class="num">03</span>Facebook</div>
+    <h2 class="section-title">Facebook Posts & Updates</h2>
+    <div class="section-sub">市場動態 · 新上市物件 · 買賣資訊</div>
+
+    <div class="fb-grid">
+      <a href="https://www.facebook.com/61557950459222/posts/122236289210265015/" target="_blank" class="fb-card">
+        <div class="fb-tag">📣 New Listing</div>
+        <p>480 N Winchester Blvd, Unit 5 — Coming Soon! 2 bed · 2 bath · 1,248 sqft · $899,000. Side-by-side garage parking in Santa Clara.</p>
+        <div class="fb-link">View on Facebook →</div>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61557950459222" target="_blank" class="fb-card">
+        <div class="fb-tag">🏫 Market Insight</div>
+        <p>California Dominates the World's Top Universities — Stanford #3, UC Berkeley #7, UCLA #11. Education continues to be one of the strongest reasons families choose Silicon Valley.</p>
+        <div class="fb-link">View on Facebook →</div>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61557950459222" target="_blank" class="fb-card">
+        <div class="fb-tag">🏠 Neighborhood Guide</div>
+        <p>Thinking about buying in Palo Alto? Watch my latest reel for an insider's guide to the neighborhoods, schools, and what makes this city so unique — from someone who's lived here for 23 years.</p>
+        <div class="fb-link">View on Facebook →</div>
+      </a>
+    </div>
+
+    <div style="text-align:center;margin-top:36px">
+      <a href="https://www.facebook.com/profile.php?id=61557950459222" target="_blank" class="view-more-btn">Follow on Facebook for More Updates →</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-dark">
+  <h2>Ready to Work Together?</h2>
+  <p>Follow along for market insights — or reach out directly when you're ready to buy, sell, or invest in the Bay Area.</p>
+  <div class="btns">
+    <a href="https://www.instagram.com/christinaperng/" target="_blank" class="cta-btn-light">Follow on Instagram</a>
+    <a href="christina-contact.html" class="cta-btn-gold">Schedule a Consultation</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Christina Perng<span>Real Estate · Compass Menlo Park · DRE# 01794803</span></div>
+    <div class="footer-divider"></div>
+    <div style="color:#666"><a href="tel:+14086677757" style="color:#666">408-667-7757</a> &nbsp;·&nbsp; <a href="mailto:christina.perng@compass.com" style="color:#666">christina.perng@compass.com</a></div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="christina-buyer-seller.html">Buyer / Seller</a>
+      <a href="christina-portfolio.html">Portfolio</a>
+      <a href="#">Social Media</a>
+      <a href="christina-contact.html">Contact</a>
+    </div>
+    <div class="copyright">Copyright © 2026 Christina Perng Real Estate. All Rights Reserved.</div>
+  </div>
+</footer>
+</body>
+</html>

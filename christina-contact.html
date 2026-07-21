@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Christina Perng Real Estate</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Lato',sans-serif;color:#333;background:#fff;font-size:15px;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.top-bar{background:#2c2c2c;color:#bbb;font-size:12px;letter-spacing:.06em;padding:7px 48px;display:flex;justify-content:flex-end;gap:28px}
+.top-bar a{color:#bbb;transition:color .2s}.top-bar a:hover{color:#fff}
+header{background:#fff;border-bottom:1px solid #e5e0d8;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:80px;position:sticky;top:0;z-index:100}
+.logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:600;color:#2c2c2c;letter-spacing:.02em;line-height:1.2}
+.logo span{display:block;font-size:11px;font-family:'Lato',sans-serif;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:#8b7355;margin-top:2px}
+nav{display:flex}
+nav a{display:block;padding:0 14px;height:80px;line-height:80px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#555;border-bottom:3px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover,nav a.active{color:#8b7355;border-bottom-color:#8b7355}
+
+.page-hero{background:#2c2c2c;padding:64px 48px;text-align:center}
+.page-hero .label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8b7355;margin-bottom:16px}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:44px;font-weight:400;color:#e8d9c4;margin-bottom:16px}
+.page-hero p{color:#999;font-size:15px;max-width:580px;margin:0 auto;line-height:1.8}
+
+/* MAIN */
+.main{max-width:1100px;margin:0 auto;padding:72px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+
+/* LEFT */
+.contact-left h2{font-family:'Playfair Display',serif;font-size:32px;font-weight:400;color:#2c2c2c;margin-bottom:8px}
+.contact-left .sub{color:#8b7355;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:32px}
+.contact-left p{color:#777;font-size:14px;line-height:1.85;margin-bottom:32px}
+
+.contact-methods{display:flex;flex-direction:column;gap:0;margin-bottom:40px}
+.contact-method{display:flex;align-items:flex-start;gap:20px;padding:20px 0;border-bottom:1px solid #f0ebe3}
+.contact-method:first-child{border-top:1px solid #f0ebe3}
+.method-icon{width:44px;height:44px;background:#f7f4ef;border:1px solid #e5e0d8;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.method-body h4{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8b7355;margin-bottom:4px}
+.method-body a,.method-body p{color:#444;font-size:15px}
+.method-body p{color:#777;font-size:13px;margin-top:2px}
+
+/* SOCIAL */
+.social-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.social-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid #e5e0d8;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#555;transition:border-color .2s,color .2s}
+.social-btn:hover{border-color:#8b7355;color:#8b7355}
+
+/* FORM */
+.contact-right h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;color:#2c2c2c;margin-bottom:8px}
+.contact-right .sub{color:#8b7355;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:32px}
+.contact-form{display:flex;flex-direction:column;gap:14px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#888}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;border:1px solid #e5e0d8;color:#333;padding:12px 14px;font-family:'Lato',sans-serif;font-size:14px;outline:none;background:#fff;transition:border-color .2s;-webkit-appearance:none}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:#8b7355}
+.contact-form textarea{height:120px;resize:none}
+.contact-form button{padding:14px 36px;background:#8b7355;color:#fff;border:none;font-family:'Lato',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:background .2s;align-self:flex-start}
+.contact-form button:hover{background:#7a6347}
+
+/* PHOTO STRIP */
+.photo-strip{display:grid;grid-template-columns:repeat(3,1fr);height:300px}
+.photo-strip img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+
+/* MAP PLACEHOLDER */
+.map-section{background:#f7f4ef;padding:56px 48px;text-align:center}
+.map-section h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:400;color:#2c2c2c;margin-bottom:8px}
+.map-section p{color:#888;font-size:14px;margin-bottom:28px}
+.area-tags{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.area-tag{padding:8px 18px;background:#fff;border:1px solid #e5e0d8;font-size:12px;font-weight:700;letter-spacing:.08em;color:#555}
+
+footer{background:#1a1a1a;color:#555;font-size:12px;padding:36px 48px}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.footer-logo{font-family:'Playfair Display',serif;font-size:22px;color:#c8b89a}
+.footer-logo span{display:block;font-family:'Lato',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#555;margin-top:3px}
+.footer-divider{width:36px;height:1px;background:#8b7355}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.footer-links a{color:#555;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.footer-links a:hover{color:#c8b89a}
+.copyright{color:#444;font-size:11px}
+
+@media(max-width:768px){
+  header{padding:0 20px}nav{display:none}
+  .page-hero{padding:44px 20px}.page-hero h1{font-size:30px}
+  .main{grid-template-columns:1fr;padding:44px 20px;gap:48px}
+  .form-row{grid-template-columns:1fr}
+  .photo-strip{grid-template-columns:1fr;height:auto}
+  .photo-strip img{height:220px}
+  .map-section{padding:44px 20px}
+  footer{padding:28px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="tel:+14086677757">408-667-7757</a>
+  <a href="mailto:christina.perng@compass.com">christina.perng@compass.com</a>
+</div>
+<header>
+  <div class="logo">Christina Perng<span>Real Estate · DRE# 01794803</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="christina-buyer-seller.html">Buyer / Seller Center</a>
+    <a href="christina-portfolio.html">Portfolio</a>
+    <a href="#" class="active">Contact</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="label">05 · Connect</div>
+  <h1>Let's Start Your Journey</h1>
+  <p>Whether you're buying, selling, or just exploring your options — I'm here to help. Reach out in English or Chinese. 歡迎以中文或英文與我聯繫。</p>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <!-- LEFT: CONTACT INFO -->
+  <div class="contact-left">
+    <h2>Get In Touch</h2>
+    <div class="sub">聯絡我</div>
+    <p>I'd love to hear from you. Whether you have a quick question or are ready to take the next step, I'm available to talk — and I always respond promptly.</p>
+
+    <div class="contact-methods">
+      <div class="contact-method">
+        <div class="method-icon">📞</div>
+        <div class="method-body">
+          <h4>Phone / Text</h4>
+          <a href="tel:+14086677757">408-667-7757</a>
+          <p>Call or text anytime — I respond quickly</p>
+        </div>
+      </div>
+      <div class="contact-method">
+        <div class="method-icon">✉️</div>
+        <div class="method-body">
+          <h4>Email</h4>
+          <a href="mailto:christina.perng@compass.com">christina.perng@compass.com</a>
+          <p>I'll reply within 24 hours</p>
+        </div>
+      </div>
+      <div class="contact-method">
+        <div class="method-icon">🏢</div>
+        <div class="method-body">
+          <h4>Office</h4>
+          <p>Compass Menlo Park</p>
+          <p>DRE# 01794803</p>
+        </div>
+      </div>
+      <div class="contact-method">
+        <div class="method-icon">🌐</div>
+        <div class="method-body">
+          <h4>Languages 服務語言</h4>
+          <p>English · 中文 (Chinese)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-row">
+      <a href="https://www.facebook.com/profile.php?id=61557950459222" target="_blank" class="social-btn">Facebook</a>
+      <a href="https://www.linkedin.com/in/christina-perng-a4b909aa/" target="_blank" class="social-btn">LinkedIn</a>
+      <a href="https://www.instagram.com/christinaperng/" target="_blank" class="social-btn">Instagram</a>
+      <a href="https://www.zillow.com/profile/Christina%20Perng#reviews" target="_blank" class="social-btn">Zillow ★★★★★</a>
+      <a href="https://www.yelp.com/biz/christina-perng-compass-realty-menlo-park" target="_blank" class="social-btn">Yelp ★★★★★</a>
+      <a href="https://www.compass.com/agents/christina-perng/" target="_blank" class="social-btn">Compass Profile</a>
+    </div>
+  </div>
+
+  <!-- RIGHT: FORM -->
+  <div class="contact-right">
+    <h2>Send a Message</h2>
+    <div class="sub">傳送訊息</div>
+    <form class="contact-form" onsubmit="return false;">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Jane">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="408-555-0000">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="jane@email.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>I'm interested in...</label>
+        <select>
+          <option>Buying a home</option>
+          <option>Selling my home</option>
+          <option>Investment property</option>
+          <option>Free home valuation</option>
+          <option>General inquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message 訊息</label>
+        <textarea placeholder="Tell me about your real estate goals, timeline, or any questions you have..."></textarea>
+      </div>
+      <button type="submit">Send Message 發送訊息</button>
+    </form>
+  </div>
+</div>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <img src="9N6A5921 (1).jpg" alt="Christina Perng">
+  <img src="9N6A5946 (1).jpg" alt="Christina Perng">
+  <img src="9N6A6169 (1).jpg" alt="Christina Perng">
+</div>
+
+<!-- SERVICE AREAS -->
+<div class="map-section">
+  <h3>Service Areas 服務區域</h3>
+  <p>Specializing in Silicon Valley's most sought-after neighborhoods across the Peninsula, South Bay, and East Bay.</p>
+  <div class="area-tags">
+    <span class="area-tag">Palo Alto</span>
+    <span class="area-tag">Menlo Park</span>
+    <span class="area-tag">Mountain View</span>
+    <span class="area-tag">Cupertino</span>
+    <span class="area-tag">Saratoga</span>
+    <span class="area-tag">Sunnyvale</span>
+    <span class="area-tag">Santa Clara</span>
+    <span class="area-tag">San Jose</span>
+    <span class="area-tag">Fremont</span>
+    <span class="area-tag">Los Gatos</span>
+    <span class="area-tag">Milpitas</span>
+    <span class="area-tag">San Ramon</span>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Christina Perng<span>Real Estate · Compass Menlo Park · DRE# 01794803</span></div>
+    <div class="footer-divider"></div>
+    <div style="color:#666"><a href="tel:+14086677757" style="color:#666">408-667-7757</a> &nbsp;·&nbsp; <a href="mailto:christina.perng@compass.com" style="color:#666">christina.perng@compass.com</a></div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="christina-buyer-seller.html">Buyer / Seller Center</a>
+      <a href="christina-portfolio.html">Portfolio</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="copyright">Copyright © 2026 Christina Perng Real Estate. All Rights Reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
