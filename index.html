@@ -272,6 +272,23 @@ section{padding:72px 48px}
 .footer-links a:hover{color:#c8b89a}
 .copyright{color:#444;font-size:11px}
 
+
+/* PORTFOLIO ROWS */
+.prop-row{display:grid;grid-template-columns:1fr auto auto;gap:24px;align-items:center;padding:20px 28px;border-bottom:1px solid #e5e0d8;color:inherit;transition:background .2s}
+.prop-row:last-child{border-bottom:none}
+.prop-row:hover{background:#f7f4ef}
+.prop-row-city{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#8b7355;margin-bottom:4px}
+.prop-row-addr{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:#2c2c2c}
+.prop-row-mid{display:flex;gap:20px;font-size:13px;color:#888}
+.prop-row-mid span{white-space:nowrap}
+.prop-row-price{font-family:'Playfair Display',serif;font-size:20px;color:#2c2c2c;font-weight:600;text-align:right;margin-bottom:4px}
+.prop-row-tag{font-size:11px;color:#8b7355;font-weight:700;letter-spacing:.08em;text-align:right;white-space:nowrap}
+@media(max-width:768px){
+  .prop-row{grid-template-columns:1fr;gap:8px}
+  .prop-row-right{text-align:left}
+  .prop-row-price{font-size:16px}
+}
+
 /* RESPONSIVE */
 @media(max-width:768px){
   header{padding:0 16px}
@@ -488,6 +505,17 @@ section{padding:72px 48px}
     </div>
   </div>
 
+  <!-- STATS BAR -->
+  <div style="background:#f7f4ef;padding:40px 48px;border-bottom:1px solid #e5e0d8">
+    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e5e0d8">
+      <div style="background:#fff;padding:28px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:36px;color:#8b7355;font-weight:600">$3B+</div><div style="font-size:12px;color:#888;margin-top:8px">Total Sales Volume</div></div>
+      <div style="background:#fff;padding:28px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:36px;color:#8b7355;font-weight:600">200+</div><div style="font-size:12px;color:#888;margin-top:8px">Families Helped</div></div>
+      <div style="background:#fff;padding:28px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:36px;color:#8b7355;font-weight:600">15+</div><div style="font-size:12px;color:#888;margin-top:8px">Years Experience</div></div>
+      <div style="background:#fff;padding:28px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:36px;color:#8b7355;font-weight:600">5★</div><div style="font-size:12px;color:#888;margin-top:8px">Zillow & Yelp Rating</div></div>
+    </div>
+  </div>
+
+  <!-- FILTER BUTTONS -->
   <div class="filters">
     <button class="filter-btn active" onclick="filterProps('all',this)">All</button>
     <button class="filter-btn" onclick="filterProps('cupertino',this)">Cupertino</button>
@@ -495,20 +523,106 @@ section{padding:72px 48px}
     <button class="filter-btn" onclick="filterProps('saratoga',this)">Saratoga</button>
     <button class="filter-btn" onclick="filterProps('san-jose',this)">San Jose</button>
     <button class="filter-btn" onclick="filterProps('sunnyvale',this)">Sunnyvale</button>
-    <button class="filter-btn" onclick="filterProps('other',this)">Other</button>
+    <button class="filter-btn" onclick="filterProps('other',this)">Other Areas</button>
   </div>
 
   <div class="portfolio-wrap">
-    <div class="portfolio-grid" id="propGrid">
-      <a href="https://www.compass.com/homedetails/10334-S-Tantau-Ave-Cupertino-CA-95014/2053806190920045289_lid/" target="_blank" class="prop-card" data-area="cupertino"><img class="prop-img" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Cupertino"><div class="prop-body"><div class="prop-price">$5,500,000</div><div class="prop-addr">10334 S Tantau Ave, Cupertino</div><div class="prop-details"><span>🛏 5 bed</span><span>🛁 5 bath</span><span>📐 3,727 sqft</span></div><span class="prop-tag">Sold</span><div class="prop-link">View on Compass →</div></div></a>
-      <a href="https://www.compass.com/homedetails/19848-Kane-Ct-Saratoga-CA-95070/1675424839098775569_lid/" target="_blank" class="prop-card" data-area="saratoga"><img class="prop-img" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="Saratoga"><div class="prop-body"><div class="prop-price">$4,601,000</div><div class="prop-addr">19848 Kane Court, Saratoga</div><div class="prop-details"><span>🛏 6 bed</span><span>🛁 4 bath</span><span>📐 2,860 sqft</span></div><span class="prop-tag">Sold</span><div class="prop-link">View on Compass →</div></div></a>
-      <a href="https://www.compass.com/homedetails/22278-Bellevue-Ave-Cupertino-CA-95014/1784267108339390513_lid/" target="_blank" class="prop-card" data-area="cupertino"><img class="prop-img" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80" alt="Cupertino"><div class="prop-body"><div class="prop-price">$4,160,000</div><div class="prop-addr">22278 Bellevue Ave, Cupertino</div><div class="prop-details"><span>🛏 5 bed</span><span>🛁 4 bath</span><span>📐 3,532 sqft</span></div><span class="prop-tag">Sold</span><div class="prop-link">View on Compass →</div></div></a>
-      <a href="https://www.compass.com/homedetails/774-Mayview-Ave-Palo-Alto-CA-94303/1484455256352798401_lid/" target="_blank" class="prop-card" data-area="palo-alto"><img class="prop-img" src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=80" alt="Palo Alto"><div class="prop-body"><div class="prop-price">$4,000,000</div><div class="prop-addr">774 Mayview Ave, Palo Alto</div><div class="prop-details"><span>🛏 4 bed</span><span>🛁 4 bath</span><span>📐 2,509 sqft</span></div><span class="prop-tag">Sold</span><div class="prop-link">View on Compass →</div></div></a>
-      <a href="https://www.compass.com/homedetails/3132-Flowers-Ln-Palo-Alto-CA-94306/1324324914951867865_lid/" target="_blank" class="prop-card" data-area="palo-alto"><img class="prop-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Palo Alto"><div class="prop-body"><div class="prop-price">$3,710,000</div><div class="prop-addr">3132 Flowers Lane, Palo Alto</div><div class="prop-details"><span>🛏 5 bed</span><span>🛁 3 bath</span><span>📐 2,071 sqft</span></div><span class="prop-tag">Sold</span><div class="prop-link">View on Compass →</div></div></a>
-      <a href="https://www.compass.com/homedetails/1174-Arlington-Ln-San-Jose-CA-95129/2103803182201901905_lid/" target="_blank" class="prop-card" data-area="san-jose"><img class="prop-img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="San Jose"><div class="prop-body"><div class="prop-price">$3,000,000</div><div class="prop-addr">1174 Arlington Lane, San Jose</div><div class="prop-details"><span>🛏 4 bed</span><span>🛁 2 bath</span><span>📐 1,483 sqft</span></div><span class="prop-tag">Sold</span><div class="prop-link">View on Compass →</div></div></a>
-      <a href="https://www.compass.com/homedetails/1198-Eagle-Ridge-Way-Milpitas-CA-95035/1667570119435137553_lid/" target="_blank" class="prop-card" data-area="other"><img class="prop-img" src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80" alt="Milpitas"><div class="prop-body"><div class="prop-price">$2,935,000</div><div class="prop-addr">1198 Eagle Ridge Way, Milpitas</div><div class="prop-details"><span>🛏 4 bed</span><span>🛁 3 bath</span><span>📐 2,705 sqft</span></div><span class="prop-tag">Sold</span><div class="prop-link">View on Compass →</div></div></a>
-      <a href="https://www.compass.com/homedetails/1010-Pepper-Ave-Sunnyvale-CA-94087/577442966648530345_lid/" target="_blank" class="prop-card" data-area="sunnyvale"><img class="prop-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Sunnyvale"><div class="prop-body"><div class="prop-price">$2,625,000</div><div class="prop-addr">1010 Pepper Ave, Sunnyvale</div><div class="prop-details"><span>🛏 5 bed</span><span>🛁 3 bath</span><span>📐 2,559 sqft</span></div><span class="prop-tag">Sold</span><div class="prop-link">View on Compass →</div></div></a>
-      <a href="https://www.compass.com/homedetails/649-Eighth-Ave-Menlo-Park-CA-94025/1943029079174688497_lid/" target="_blank" class="prop-card" data-area="other"><img class="prop-img" src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&q=80" alt="Menlo Park"><div class="prop-body"><div class="prop-price">$2,510,000</div><div class="prop-addr">649 Eighth Ave, Menlo Park</div><div class="prop-details"><span>🛏 3 bed</span><span>🛁 3 bath</span><span>📐 1,890 sqft</span></div><span class="prop-tag">Sold</span><div class="prop-link">View on Compass →</div></div></a>
+    <div id="propGrid" style="display:flex;flex-direction:column;gap:0;border:1px solid #e5e0d8">
+
+      <a href="https://www.compass.com/homedetails/10334-S-Tantau-Ave-Cupertino-CA-95014/2053806190920045289_lid/" target="_blank" class="prop-row" data-area="cupertino">
+        <div class="prop-row-left"><div class="prop-row-city">Cupertino</div><div class="prop-row-addr">10334 South Tantau Avenue</div></div>
+        <div class="prop-row-mid"><span>5 bed</span><span>5 bath</span><span>3,727 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$5,500,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/19848-Kane-Ct-Saratoga-CA-95070/1675424839098775569_lid/" target="_blank" class="prop-row" data-area="saratoga">
+        <div class="prop-row-left"><div class="prop-row-city">Saratoga</div><div class="prop-row-addr">19848 Kane Court</div></div>
+        <div class="prop-row-mid"><span>6 bed</span><span>4 bath</span><span>2,860 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$4,601,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/22278-Bellevue-Ave-Cupertino-CA-95014/1784267108339390513_lid/" target="_blank" class="prop-row" data-area="cupertino">
+        <div class="prop-row-left"><div class="prop-row-city">Cupertino</div><div class="prop-row-addr">22278 Bellevue Avenue</div></div>
+        <div class="prop-row-mid"><span>5 bed</span><span>4 bath</span><span>3,532 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$4,160,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/774-Mayview-Ave-Palo-Alto-CA-94303/1484455256352798401_lid/" target="_blank" class="prop-row" data-area="palo-alto">
+        <div class="prop-row-left"><div class="prop-row-city">Palo Alto</div><div class="prop-row-addr">774 Mayview Avenue</div></div>
+        <div class="prop-row-mid"><span>4 bed</span><span>4 bath</span><span>2,509 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$4,000,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/3132-Flowers-Ln-Palo-Alto-CA-94306/1324324914951867865_lid/" target="_blank" class="prop-row" data-area="palo-alto">
+        <div class="prop-row-left"><div class="prop-row-city">Palo Alto</div><div class="prop-row-addr">3132 Flowers Lane</div></div>
+        <div class="prop-row-mid"><span>5 bed</span><span>3 bath</span><span>2,071 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$3,710,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/1174-Arlington-Ln-San-Jose-CA-95129/2103803182201901905_lid/" target="_blank" class="prop-row" data-area="san-jose">
+        <div class="prop-row-left"><div class="prop-row-city">San Jose</div><div class="prop-row-addr">1174 Arlington Lane</div></div>
+        <div class="prop-row-mid"><span>4 bed</span><span>2 bath</span><span>1,483 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$3,000,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/1198-Eagle-Ridge-Way-Milpitas-CA-95035/1667570119435137553_lid/" target="_blank" class="prop-row" data-area="other">
+        <div class="prop-row-left"><div class="prop-row-city">Milpitas</div><div class="prop-row-addr">1198 Eagle Ridge Way</div></div>
+        <div class="prop-row-mid"><span>4 bed</span><span>3 bath</span><span>2,705 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$2,935,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/152-Brian-Ln-Santa-Clara-CA-95051/1536019307024641601_lid/" target="_blank" class="prop-row" data-area="other">
+        <div class="prop-row-left"><div class="prop-row-city">Santa Clara</div><div class="prop-row-addr">152 Brian Lane</div></div>
+        <div class="prop-row-mid"><span>3 bed</span><span>2 bath</span><span>1,350 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$2,710,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/20433-V-a-Palamos-Cupertino-CA-95014/1814080604510347473_lid/" target="_blank" class="prop-row" data-area="cupertino">
+        <div class="prop-row-left"><div class="prop-row-city">Cupertino</div><div class="prop-row-addr">20433 Vía Palamos</div></div>
+        <div class="prop-row-mid"><span>4 bed</span><span>3 bath</span><span>2,157 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$2,700,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/1010-Pepper-Ave-Sunnyvale-CA-94087/577442966648530345_lid/" target="_blank" class="prop-row" data-area="sunnyvale">
+        <div class="prop-row-left"><div class="prop-row-city">Sunnyvale</div><div class="prop-row-addr">1010 Pepper Avenue</div></div>
+        <div class="prop-row-mid"><span>5 bed</span><span>3 bath</span><span>2,559 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$2,625,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/1397-Yukon-Dr-Sunnyvale-CA-94087/1592161017259188809_lid/" target="_blank" class="prop-row" data-area="sunnyvale">
+        <div class="prop-row-left"><div class="prop-row-city">Sunnyvale</div><div class="prop-row-addr">1397 Yukon Drive</div></div>
+        <div class="prop-row-mid"><span>3 bed</span><span>2 bath</span><span>1,606 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$2,565,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/246-Gregg-Dr-Los-Gatos-CA-95032/1637110542071134001_lid/" target="_blank" class="prop-row" data-area="other">
+        <div class="prop-row-left"><div class="prop-row-city">Los Gatos</div><div class="prop-row-addr">246 Gregg Drive</div></div>
+        <div class="prop-row-mid"><span>4 bed</span><span>2 bath</span><span>1,622 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$2,565,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/649-Eighth-Ave-Menlo-Park-CA-94025/1943029079174688497_lid/" target="_blank" class="prop-row" data-area="other">
+        <div class="prop-row-left"><div class="prop-row-city">Menlo Park</div><div class="prop-row-addr">649 Eighth Avenue</div></div>
+        <div class="prop-row-mid"><span>3 bed</span><span>3 bath</span><span>1,890 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$2,510,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/4835-Alex-Dr-San-Jose-CA-95130/1801043527965820529_lid/" target="_blank" class="prop-row" data-area="san-jose">
+        <div class="prop-row-left"><div class="prop-row-city">San Jose</div><div class="prop-row-addr">4835 Alex Drive</div></div>
+        <div class="prop-row-mid"><span>4 bed</span><span>2 bath</span><span>1,433 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$2,480,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+      <a href="https://www.compass.com/homedetails/1202-Belknap-Ct-Cupertino-CA-95014/25096303092557521_lid/" target="_blank" class="prop-row" data-area="cupertino">
+        <div class="prop-row-left"><div class="prop-row-city">Cupertino</div><div class="prop-row-addr">1202 Belknap Court</div></div>
+        <div class="prop-row-mid"><span>3 bed</span><span>2 bath</span><span>1,822 sqft</span></div>
+        <div class="prop-row-right"><div class="prop-row-price">$2,435,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
+      </a>
+
+    </div>
+
+    <div style="text-align:center;margin-top:32px">
+      <a href="https://www.compass.com/agents/christina-perng/" target="_blank" class="btn-outline">View Full Transaction History on Compass →</a>
     </div>
   </div>
 </div>
@@ -860,8 +974,8 @@ function showBS(tab) {
 function filterProps(area, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.prop-card').forEach(card => {
-    card.style.display = (area === 'all' || card.dataset.area === area) ? 'block' : 'none';
+  document.querySelectorAll('.prop-row').forEach(card => {
+    card.style.display = (area === 'all' || card.dataset.area === area) ? 'grid' : 'none';
   });
 }
 
