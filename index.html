@@ -29,7 +29,7 @@ nav a:hover,nav a.active{color:#8b7355;border-bottom-color:#8b7355}
 /* ===================== HOME PAGE ===================== */
 /* HERO */
 .hero{position:relative;height:580px;overflow:hidden;background:#1a1a1a}
-.hero-bg{position:absolute;inset:-80px 0;background-image:url('9N6A5946 (1).jpg');background-size:cover;background-position:center top;opacity:.72;will-change:transform}
+.hero-bg{position:absolute;inset:-80px 0;background-image:url('9N6A5946 (1).jpg');background-size:cover;background-position:center 15%;opacity:.72;will-change:transform}
 .hero-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:24px}
 .hero-overlay h1{font-family:'Playfair Display',serif;font-size:52px;font-weight:400;line-height:1.15;margin-bottom:20px;text-shadow:0 2px 16px rgba(0,0,0,.4)}
 .hero-overlay p{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#e8d9c4;margin-bottom:32px}
@@ -436,18 +436,21 @@ section{padding:72px 48px}
       <div class="section-label"><span class="sec-num">04</span>Premier Listings</div>
       <h2>Portfolio</h2>
       <p class="sub">Recent Transactions</p>
-      <div class="listings-grid">
-        <a href="https://www.compass.com/homedetails/10334-S-Tantau-Ave-Cupertino-CA-95014/2053806190920045289_lid/" target="_blank" class="listing-card">
-          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Cupertino">
-          <div class="prop-body"><div class="price">$5,500,000</div><h3>Cupertino, CA</h3><p>10334 S Tantau Ave · 5bd · 5ba · 3,727 sqft</p><span class="prop-link">View on Compass →</span></div>
+      <div style="border:1px solid #e5e0d8">
+        <a href="https://www.compass.com/homedetails/10334-S-Tantau-Ave-Cupertino-CA-95014/2053806190920045289_lid/" target="_blank" class="prop-row" data-area="cupertino">
+          <div class="prop-row-left"><div class="prop-row-city">Cupertino</div><div class="prop-row-addr">10334 South Tantau Avenue</div></div>
+          <div class="prop-row-mid"><span>5 bed</span><span>5 bath</span><span>3,727 sqft</span></div>
+          <div class="prop-row-right"><div class="prop-row-price">$5,500,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
         </a>
-        <a href="https://www.compass.com/homedetails/19848-Kane-Ct-Saratoga-CA-95070/1675424839098775569_lid/" target="_blank" class="listing-card">
-          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="Saratoga">
-          <div class="prop-body"><div class="price">$4,601,000</div><h3>Saratoga, CA</h3><p>19848 Kane Court · 6bd · 4ba · 2,860 sqft</p><span class="prop-link">View on Compass →</span></div>
+        <a href="https://www.compass.com/homedetails/19848-Kane-Ct-Saratoga-CA-95070/1675424839098775569_lid/" target="_blank" class="prop-row" data-area="saratoga">
+          <div class="prop-row-left"><div class="prop-row-city">Saratoga</div><div class="prop-row-addr">19848 Kane Court</div></div>
+          <div class="prop-row-mid"><span>6 bed</span><span>4 bath</span><span>2,860 sqft</span></div>
+          <div class="prop-row-right"><div class="prop-row-price">$4,601,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
         </a>
-        <a href="https://www.compass.com/homedetails/774-Mayview-Ave-Palo-Alto-CA-94303/1484455256352798401_lid/" target="_blank" class="listing-card">
-          <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=600&q=80" alt="Palo Alto">
-          <div class="prop-body"><div class="price">$4,000,000</div><h3>Palo Alto, CA</h3><p>774 Mayview Ave · 4bd · 4ba · 2,509 sqft</p><span class="prop-link">View on Compass →</span></div>
+        <a href="https://www.compass.com/homedetails/774-Mayview-Ave-Palo-Alto-CA-94303/1484455256352798401_lid/" target="_blank" class="prop-row" data-area="palo-alto">
+          <div class="prop-row-left"><div class="prop-row-city">Palo Alto</div><div class="prop-row-addr">774 Mayview Avenue</div></div>
+          <div class="prop-row-mid"><span>4 bed</span><span>4 bath</span><span>2,509 sqft</span></div>
+          <div class="prop-row-right"><div class="prop-row-price">$4,000,000</div><div class="prop-row-tag">Sold · View on Compass →</div></div>
         </a>
       </div>
       <div style="text-align:center;margin-top:40px">
