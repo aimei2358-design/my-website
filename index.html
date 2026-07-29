@@ -291,10 +291,13 @@ section{padding:72px 48px}
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  header{padding:0 12px}
-  nav{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  nav a{padding:0 8px;font-size:9px;letter-spacing:.05em;white-space:nowrap;height:60px;line-height:60px}
-  header{height:60px}
+  .top-bar{display:none}
+  header{padding:0 12px;height:60px}
+  .logo{font-size:15px}
+  .logo span{font-size:8px}
+  nav{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  nav a{padding:0 10px;font-size:9px;letter-spacing:.05em;white-space:nowrap;height:60px;line-height:60px}
   .hero-overlay h1{font-size:28px}
   section{padding:44px 20px}
   .about-inner{grid-template-columns:1fr}
