@@ -476,12 +476,12 @@ section{padding:72px 48px}
       </div>
       <form class="contact-form" onsubmit="submitForm(event, this)">
         <div class="form-row">
-          <input type="text" placeholder="First Name">
-          <input type="text" placeholder="Last Name">
+          <input type="text" name="first_name" placeholder="First Name">
+          <input type="text" name="last_name" placeholder="Last Name">
         </div>
-        <input type="tel" placeholder="Phone">
-        <input type="email" placeholder="Email">
-        <textarea placeholder="Tell me about your property goals..."></textarea>
+        <input type="tel" name="phone" placeholder="Phone">
+        <input type="email" name="email" placeholder="Email">
+        <textarea name="message" placeholder="Tell me about your property goals..."></textarea>
         <button type="submit" id="btn1">Send Message</button>
       </form>
     </div>
@@ -915,17 +915,17 @@ section{padding:72px 48px}
       <div class="sub">傳送訊息</div>
       <form class="contact-form2" onsubmit="submitForm(event, this)">
         <div class="form-row">
-          <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane"></div>
-          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+          <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Jane"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith"></div>
         </div>
         <div class="form-row">
-          <div class="form-group"><label>Phone</label><input type="tel" placeholder="408-555-0000"></div>
-          <div class="form-group"><label>Email</label><input type="email" placeholder="jane@email.com"></div>
+          <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="408-555-0000"></div>
+          <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="jane@email.com"></div>
         </div>
         <div class="form-group"><label>I'm interested in...</label>
-          <select><option>Buying a home</option><option>Selling my home</option><option>Investment property</option><option>Free home valuation</option><option>General inquiry</option></select>
+          <select name="interest"><option>Buying a home</option><option>Selling my home</option><option>Investment property</option><option>Free home valuation</option><option>General inquiry</option></select>
         </div>
-        <div class="form-group"><label>Message 訊息</label><textarea placeholder="Tell me about your real estate goals..."></textarea></div>
+        <div class="form-group"><label>Message 訊息</label><textarea name="message" placeholder="Tell me about your real estate goals..."></textarea></div>
         <button type="submit" id="btn2">Send Message 發送訊息</button>
       </form>
     </div>
@@ -1012,11 +1012,17 @@ async function submitForm(e, form) {
   const btn = form.querySelector('button[type="submit"]');
   btn.textContent = 'Sending...';
   btn.disabled = true;
+  const data = {};
+  new FormData(form).forEach((v, k) => data[k] = v);
+  // Add named inputs manually since they lack name attributes
+  form.querySelectorAll('input, textarea, select').forEach(el => {
+    if(el.placeholder || el.id) data[el.placeholder || el.id] = el.value;
+  });
   try {
     const response = await fetch('https://formspree.io/f/moeadqjz', {
       method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
+      body: JSON.stringify(data),
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
     });
     if (response.ok) {
       btn.textContent = '✓ Message Sent!';
